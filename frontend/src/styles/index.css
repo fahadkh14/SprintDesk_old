@@ -1,0 +1,18 @@
+@import '@fontsource-variable/inter';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; }
+  body { @apply bg-slate-50 font-sans text-slate-800; }
+  :focus-visible { @apply outline-none ring-2 ring-brand-500 ring-offset-1; }
+}
+
+/* Only shown on touch devices, where HTML5 drag and drop is unavailable. */
+.touch-only { display: none; }
+@media (hover: none) { .touch-only { display: block; } }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
